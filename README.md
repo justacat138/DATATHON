@@ -1,84 +1,76 @@
-
-Tên đội: PPAP
-
-Thành viên:
-
+📊 PPAP Team – Data Analysis & Machine Learning Project
+👥 Team Members
 Trần Phương Phương
-
 Nguyễn Phạm Bảo Lam
-
 Nguyễn Anh Thư
+📂 Project Structure
 
-📂 Cấu trúc thư mục Github
-Dưới đây là mô tả chi tiết vai trò của từng tệp tin trong project:
+Dự án được tổ chức theo các thư mục chính như sau:
 
-1. Thư mục EDA/ (Exploratory Data Analysis)
-Thư mục này chứa các mã nguồn dùng để khám phá và phân tích dữ liệu trực quan:
+1. 📁 EDA/ – Exploratory Data Analysis
 
-Sale performance.py: Phân tích hiệu suất bán hàng theo thời gian và khu vực.
+Thư mục này chứa các script phục vụ cho việc khám phá và phân tích dữ liệu:
 
-aov.py: Tính toán và phân tích Giá trị đơn hàng trung bình (Average Order Value).
+Sale performance.py – Phân tích hiệu suất bán hàng theo thời gian và khu vực
+aov.py – Tính toán và phân tích Average Order Value (AOV)
+customer demographics.py – Phân tích đặc điểm nhân khẩu học khách hàng
+inventory.py – Phân tích và quản lý tồn kho
+perceptions.py – Phân tích cảm nhận của khách hàng
+promotions.py – Đánh giá hiệu quả các chương trình khuyến mãi
+returns.py – Phân tích tỷ lệ và nguyên nhân hàng hoàn trả
+shipments.py – Phân tích quy trình và thời gian vận chuyển
+baseline.ipynb – Notebook phân tích ban đầu, định hướng mô hình
+2. 📁 Model/ – Machine Learning & Evaluation
 
-customer demographics.py: Phân tích đặc điểm nhân khẩu học của khách hàng.
+Thư mục trung tâm cho việc xây dựng và đánh giá mô hình:
 
-inventory.py: Quản lý và phân tích tình trạng tồn kho.
+datathon.ipynb – Notebook chính:
+Tiền xử lý dữ liệu
+Huấn luyện mô hình
+Tinh chỉnh tham số
+Dự báo kết quả
+📊 Model Interpretation & Visualization
+feature_importance_v8.png – Độ quan trọng của đặc trưng
+validation_v8.png – Kết quả đánh giá trên tập validation
+🔍 SHAP Explainability
+shap_summary.png – Tổng quan ảnh hưởng của các feature
+shap_bar.png – Feature importance dạng thanh
+shap_waterfall.png – Giải thích dự đoán cụ thể
+shap_dependence.png – Mối quan hệ giữa feature và output
+3. 📁 Trắc nghiệm/
+DATATHON.py – Xử lý các câu hỏi và bài kiểm tra liên quan đến cuộc thi
+⚙️ Setup & Reproducibility
+🔹 1. Environment Setup
 
-perceptions.py: Phân tích cảm hồi/nhận thức của khách hàng về sản phẩm.
+Yêu cầu: Python ≥ 3.8
 
-promotions.py: Đánh giá hiệu quả của các chương trình khuyến mãi.
+Khuyến nghị sử dụng virtual environment:
 
-returns.py: Thống kê và tìm hiểu nguyên nhân tỉ lệ hàng trả về.
-
-shipments.py: Phân tích quy trình và thời gian vận chuyển đơn hàng.
-
-baseline.ipynb: File Notebook chứa các phân tích cơ bản ban đầu để định hướng mô hình.
-
-2. Thư mục Model/
-Thư mục trọng tâm chứa các thử nghiệm về học máy và đánh giá mô hình:
-
-datathon.ipynb: Notebook chính thực hiện huấn luyện mô hình, tinh chỉnh tham số và dự báo.
-
-Các file hình ảnh (.png):
-
-feature_importance_v8.png: Biểu đồ mức độ quan trọng của các đặc trưng.
-
-shap_summary.png, shap_bar.png, shap_waterfall.png, shap_dependence.png: Các biểu đồ giải thích mô hình bằng giá trị SHAP (giúp hiểu rõ tại sao mô hình đưa ra quyết định).
-
-validation_v8.png: Biểu đồ đánh giá kết quả trên tập kiểm thử (Validation).
-
-3. Thư mục Trắc nghiệm/
-DATATHON.py: File xử lý các câu hỏi hoặc bài kiểm tra liên quan đến nội dung cuộc thi.
-
-🛠 Hướng dẫn cài đặt và chạy lại (Reproduce)
-Để chạy lại dự án này trên máy tính cá nhân, vui lòng làm theo các bước sau:
-
-Bước 1: Chuẩn bị môi trường
-Yêu cầu máy tính đã cài đặt Python 3.8+. Bạn nên sử dụng môi trường ảo (virtualenv hoặc conda).
-
-Bash
 # Tạo môi trường ảo
 python -m venv venv
 
-# Kích hoạt môi trường (Windows)
+# Kích hoạt (Windows)
 venv\Scripts\activate
 
-# Kích hoạt môi trường (Mac/Linux)
+# Kích hoạt (Mac/Linux)
 source venv/bin/activate
-Bước 2: Cài đặt thư viện cần thiết
-Cài đặt các thư viện phổ biến dùng trong dự án (Pandas, Numpy, Scikit-learn, XGBoost/LightGBM, Matplotlib, SHAP...):
-
-Bash
+🔹 2. Install Dependencies
 pip install pandas numpy matplotlib seaborn scikit-learn shap jupyter
-Bước 3: Chạy phân tích EDA
-Bạn có thể chạy các file .py trong thư mục EDA để xem kết quả phân tích:
 
-Bash
+(Tuỳ chọn: thêm xgboost hoặc lightgbm nếu sử dụng)
+
+🔹 3. Run EDA
 python EDA/"Sale performance.py"
-Bước 4: Chạy Mô hình
-Mở công cụ Jupyter Notebook hoặc VS Code.
 
-Mở file Model/datathon.ipynb.
+Bạn có thể chạy từng file để xem các phân tích riêng biệt.
 
-Đảm bảo file dữ liệu đầu vào (dataset) đã được đặt đúng đường dẫn trong code.
-
-Chọn Run All Cells để thực thi toàn bộ quy trình từ xử lý dữ liệu đến huấn luyện mô hình.
+🔹 4. Run Model
+jupyter notebook
+Mở file: Model/datathon.ipynb
+Đảm bảo dataset đúng đường dẫn
+Chọn Run All Cells để chạy toàn bộ pipeline
+🎯 Project Objectives
+Phân tích dữ liệu kinh doanh đa chiều
+Xây dựng mô hình dự đoán
+Giải thích mô hình bằng SHAP
+Đưa ra insight hỗ trợ quyết định
